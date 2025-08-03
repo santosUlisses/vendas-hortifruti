@@ -1,0 +1,32 @@
+<div class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title mb-4 text-center">Adicionar ao Carrinho</h3>
+
+            <form action="/add/carrinho" method="post">
+                <input type="hidden" name="produtoId" value="{{produto.id}}">
+                <input type="hidden" name="preco_unitario" value="{{produto.preco}}">
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Produto:</label>
+                    <p class="form-control-plaintext">{{produto.nome}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="quantidade" class="form-label fw-bold">Quantidade:</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" max="{{produto.estoque}}" value="1"
+                        class="form-control w-25">
+                    <small class="text-muted">Estoque disponível: {{produto.estoque}}</small>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Valor unitário:</label>
+                    <p class="form-control-plaintext">R$ {{produto.preco}}</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+                <a href="/produtos/venda" class="btn btn-secondary ms-2">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div>

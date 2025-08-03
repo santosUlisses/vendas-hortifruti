@@ -1,0 +1,40 @@
+<div class="container my-5">
+    <h2 class="mb-4 text-center">🛒 Meu Carrinho</h2>
+
+    {{#if produtoDetalhes}}
+    <ul class="list-group mb-4">
+        {{#each produtoDetalhes}}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{this.nome}}</div>
+                Quantidade: {{this.quantidade}} <br>
+                Preço unitário: R$ {{this.preco_unitario}}<br>
+                Total: R$ {{this.valor_total}}
+            </div>
+            <form action="/remover/item/{{this.id}}" method="post">
+                <button type="submit" class="btn btn-outline-danger btn-sm">Remover</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+
+    <div class="mb-3">
+        <h5 class="text-end">Total do Carrinho: <strong>R$ {{total_carrinho}}</strong></h5>
+    </div>
+
+    <form action="/realizar/compra" method="post" class="text-end">
+        <input type="hidden" name="CarrinhoId" value="{{idCarrinho}}">
+        <input type="hidden" name="valor_total" value="{{total_carrinho}}">
+        <button type="submit" class="btn btn-success">Realizar Compra</button>
+    </form>
+
+    {{else}}
+    <div class="alert alert-info text-center">
+        Carrinho vazio.
+    </div>
+    {{/if}}
+
+    <div class="mt-4 text-center">
+        <a href="/paineladm" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

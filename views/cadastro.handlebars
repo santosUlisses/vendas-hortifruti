@@ -1,0 +1,44 @@
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h4 class="mb-0">Cadastro de usuário</h4>
+                </div>
+
+                <div class="card-body">
+                    <form action="/cadastrar" method="post">
+                        <input type="hidden" name="id">
+
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" name="senha">
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="card-footer text-center">
+                    <a href="/" class="btn btn-outline-secondary btn-sm">Voltar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

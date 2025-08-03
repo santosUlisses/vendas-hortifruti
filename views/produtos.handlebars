@@ -1,0 +1,32 @@
+<div class="container my-4">
+  <h1 class="text-center mb-4"> Lista de Produtos</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {{#each produtos}}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{this.nome}}</h5>
+          <p class="card-text">
+            <strong>ID:</strong> {{this.id}}<br>
+            <strong>Estoque:</strong> {{this.estoque}}<br>
+            <strong>Preço:</strong> R$ {{this.preco}}
+          </p>
+
+          <div class="d-flex justify-content-between">
+            <a href="/editar/produtos/{{this.id}}" class="btn btn-warning btn-sm"> Editar</a>
+
+            <form action="/deletar/produto/{{this.id}}" method="post" onsubmit="return confirm('Deseja realmente deletar este produto?');">
+              <button type="submit" class="btn btn-danger btn-sm"> Deletar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="/paineladm" class="btn btn-secondary"> Voltar ao Painel</a>
+  </div>
+</div>

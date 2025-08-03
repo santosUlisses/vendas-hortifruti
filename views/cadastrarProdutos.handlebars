@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow">
+        <div class="card-header bg-success text-white text-center">
+          <h4 class="mb-0">Cadastrar Produto</h4>
+        </div>
+
+        <div class="card-body">
+          <form action="/cadastrar/produto" method="post">
+
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome do Produto</label>
+              <input type="text" class="form-control" id="nome" name="nome" >
+            </div>
+
+            <div class="mb-3">
+              <label for="estoque" class="form-label">Quantidade em Estoque</label>
+              <input type="number" class="form-control" id="estoque" name="estoque" >
+            </div>
+
+            <div class="mb-3">
+              <label for="preco" class="form-label">Preço (R$)</label>
+              <input type="text" class="form-control" id="preco" name="preco" >
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">Cadastrar</button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="card-footer text-center">
+          <a href="/paineladm" class="btn btn-outline-secondary btn-sm">Voltar ao Painel</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

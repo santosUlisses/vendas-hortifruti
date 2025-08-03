@@ -1,0 +1,46 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h4 class="mb-0">Editar Produto</h4>
+                </div>
+
+                <div class="card-body">
+                    <form action="/editar/produto" method="post">
+                        <input type="hidden" name="id" value="{{produto.id}}">
+
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome do Produto</label>
+                            <input type="text" name="nome" class="form-control" id="nome" value="{{produto.nome}}"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="estoque" class="form-label">Quantidade em Estoque</label>
+                            <input type="number" name="estoque" class="form-control" id="estoque"
+                                value="{{produto.estoque}}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="preco" class="form-label">Preço (R$)</label>
+                            <input type="text" name="preco" class="form-control" id="preco" value="{{produto.preco}}"
+                                required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Editar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="card-footer text-center">
+                    <a href="/paineladm" class="btn btn-outline-secondary btn-sm">Voltar ao Painel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

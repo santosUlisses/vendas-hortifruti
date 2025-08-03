@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h4 class="mb-4">Histórico de Compras</h4>
+
+    {{#each produtosCarrinho}}
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Data da Compra: {{this.data_compra}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Valor Total: R$ {{this.valor_total}}</h6>
+
+            <hr>
+
+            <h6>Itens da compra:</h6>
+            <ul class="list-group list-group-flush">
+                {{#each this.detalhes_compra}}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>{{this.nome}}</strong><br>
+                        Quantidade: {{this.quantidade}}<br>
+                        Valor Unitário: R$ {{this.preco_unitario}}
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<a href="/painel/usuario" class="btn btn-secondary">Voltar</a>

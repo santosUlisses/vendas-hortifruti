@@ -1,0 +1,18 @@
+<div class="container my-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="mb-0">Painel do Usuário</h2>
+        </div>
+
+        <div class="card-body text-center">
+            <p class="lead mb-4">Bem-vindo! Escolha uma opção abaixo:</p>
+
+            <div class="d-grid gap-3 col-6 mx-auto">
+                <a href="/produtos/venda" class="btn btn-outline-primary btn-lg">Ver Produtos à Venda</a>
+                <a href="/carrinho/user" class="btn btn-outline-success btn-lg">Meu Carrinho</a>
+                <a href="/user/edit/:{{req.session.userId}}" class="btn btn-outline-warning btn-lg">Editar Dados</a>
+                <a href="/lista/compras" class="btn btn-outline-dark btn-lg">Minhas compras</a>
+            </div>
+        </div>
+    </div>
+</div>
